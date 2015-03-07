@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Apache Wicket Quickstart</title>
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet'
+          type='text/css'/>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Stylesheet"/>
+</head>
+<body>
+<div id="hd">
+    <div id="logo">
+        <img src="logo.png" width="50px" height="50px" alt="Wicket Logo"/>
+
+        <h1>Apache Wicket</h1>
+    </div>
+</div>
+<div id="bd">
+    <form wicket:id="form">
+        <ul>
+            <li><wicket:container wicket:id="longMaxValue-1"/></li>
+            <li><wicket:container wicket:id="longMaxValue"/></li>
+            <li><wicket:container wicket:id="longMaxValueInDouble"/></li>
+            <li><wicket:container wicket:id="longMaxValueInDoubleOver"/></li>
+        </ul>
+        <table border="1">
+            <tr>
+                <th></th>
+                <th>Stored value</th>
+                <th>Submitted value</th>
+            </tr>
+            <tr>
+                <td>Long Input: </td>
+                <td><wicket:container wicket:id="longInputValue"/></td>
+                <td><input type="text" wicket:id="longInputSubmitted"/></td>
+            </tr>
+            <tr>
+                <td>Long.MAX_VALUE validation: </td>
+                <td><wicket:container wicket:id="validatedLongInputValue"/></td>
+                <td><input type="text" wicket:id="validatedLongInputSubmitted"/></td>
+            </tr>
+            <tr>
+                <td>Long.MAX_VALUE - 1 validation: </td>
+                <td><wicket:container wicket:id="validatedM1LongInputValue"/></td>
+                <td><input type="text" wicket:id="validatedM1LongInputSubmitted"/></td>
+            </tr>
+            <tr>
+                <td colspan="3"><input type="submit" wicket:id="submit"/></td>
+            </tr>
+        </table>
+    </form>
+    <div wicket:id="feedback-panel"/>
+</div>
+<div id="ft">
+    <p>
+        Please mention the correct Wicket version: <wicket:container wicket:id="version">1.5-SNAPSHOT</wicket:container>.
+    </p>
+</div>
+</body>
+</html>
