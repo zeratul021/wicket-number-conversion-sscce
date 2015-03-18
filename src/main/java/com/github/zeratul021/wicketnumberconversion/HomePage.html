@@ -18,6 +18,8 @@
 <div id="bd">
     <form wicket:id="form">
         <ul>
+            <li><wicket:container wicket:id="doubleMaxValue"/></li>
+            <li><wicket:container wicket:id="doubleMaxValue"/></li>
             <li><wicket:container wicket:id="longMaxValue-1"/></li>
             <li><wicket:container wicket:id="longMaxValue"/></li>
             <li><wicket:container wicket:id="longMaxValueInDouble"/></li>
@@ -28,6 +30,11 @@
                 <th></th>
                 <th>Stored value</th>
                 <th>Submitted value</th>
+            </tr>
+            <tr>
+                <td>BigInteger Input: </td>
+                <td><wicket:container wicket:id="bigIntegerInputValue"/></td>
+                <td><input type="text" wicket:id="bigIntegerInputSubmitted"/></td>
             </tr>
             <tr>
                 <td>Long Input: </td>
