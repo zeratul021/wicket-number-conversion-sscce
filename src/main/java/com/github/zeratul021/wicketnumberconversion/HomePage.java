@@ -12,10 +12,13 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.validation.validator.RangeValidator;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 public class HomePage extends WebPage {
     private static final long serialVersionUID = 1L;
 
+    private BigDecimal bigDecimalInput;
+    private BigInteger bigIntegerInput;
     private Long longInput;
     private Long validatedLongInput;
     private Long validatedM1LongInput;
@@ -28,10 +31,17 @@ public class HomePage extends WebPage {
         Form<Void> form = new Form<>("form");
         add(form);
 
+        form.add(new Label("doubleMaxValue", BigDecimal.valueOf(Double.MAX_VALUE).toPlainString()));
         form.add(new Label("longMaxValue-1", Long.MAX_VALUE - 1));
         form.add(new Label("longMaxValue", Long.MAX_VALUE));
         form.add(new Label("longMaxValueInDouble", BigDecimal.valueOf((double) Long.MAX_VALUE).toPlainString()));
         form.add(new Label("longMaxValueInDoubleOver", BigDecimal.valueOf(((double) Long.MAX_VALUE)).add(BigDecimal.ONE).toPlainString()));
+        IModel<BigInteger> bigIntegerModel = new PropertyModel<>(this, "bigIntegerInput");
+        form.add(new Label("bigIntegerInputValue", bigIntegerModel));
+        form.add(new TextField<>("bigIntegerInputSubmitted", bigIntegerModel));
+        IModel<BigDecimal> bigDecimalModel = new PropertyModel<>(this, "bigDecimalInput");
+        form.add(new Label("bigDecimalInputValue", bigDecimalModel));
+        form.add(new TextField<>("bigDecimalInputSubmitted", bigDecimalModel));
         IModel<Long> longModel = new PropertyModel<>(this, "longInput");
         form.add(new Label("longInputValue", longModel));
         form.add(new TextField<>("longInputSubmitted", longModel));
